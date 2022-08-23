@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/form.css' %}">
+
+</head>
+<body>
+<!--<h1>Registration</h1>-->
+<!--<form action="register" method="post">-->
+<!--    {% csrf_token %}-->
+<!--    <input type="text" name="username" placeholder="enter username"><br>-->
+<!--    <input type="text" name="firstname" placeholder="enter firstname"><br>-->
+<!--    <input type="text" name="lastname" placeholder="enter lastname"><br>-->
+<!--    <input type="text" name="email" placeholder="enter email"><br>-->
+<!--    <input type="password" name="password" placeholder="enter password"><br>-->
+<!--    <input type="password" name="password1" placeholder="confirm password"><br>-->
+<!--    <input type="submit">-->
+<!--</form>-->
+<!--{% for msg in messages %}-->
+<!--<h3>{{msg}}</h3>-->
+<!--{% endfor %}-->
+<form action="register" method="post">
+    {% csrf_token %}
+  <div class="container">
+  <center>  <h1> Registeration Form</h1> </center>
+  <hr>
+<input type="text" name="username" placeholder="Enter Username" size="15" required />
+<input type="text" name="firstname" placeholder="Enter Firstname" size="15" required />
+<input type="text" name="lastname" placeholder="Enter Lastname" size="15"required />
+      <input type="text" placeholder="Enter Email" name="email" required>
+      <input type="password" placeholder="Enter Password" name="password" required>
+      <input type="password" placeholder="Retype Password" name="password1" required>
+      <button type="submit" class="registerbtn">Register</button>
+</form>
+{% for msg in messages %}
+<h3>{{msg}}</h3>
+{% endfor %}
+</body>
+</html>
